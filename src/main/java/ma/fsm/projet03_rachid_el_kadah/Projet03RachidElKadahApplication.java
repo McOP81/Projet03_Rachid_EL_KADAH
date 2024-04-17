@@ -22,7 +22,7 @@ public class Projet03RachidElKadahApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-//		productRepository.save(new Product(null,"Computer",4300,3));
+		productRepository.save(new Product(null,"Computer",4300,3));
 		productRepository.save(new Product(null,"Printer",1200,4));
 		productRepository.save(new Product(null,"Smart phone",3200,32));
 		List<Product> products = productRepository.findAll();
