@@ -46,7 +46,7 @@ public class Projet03RachidElKadahApplication implements CommandLineRunner {
 			System.out.println(p);
 		});
 		System.out.println("@@@@@@@@@@@");
-		List<Product> productList3 = productRepository.findByPriceGreaterThan(3000);
+		List<Product> productList3 = productRepository.searchByPrice(3000);
 		productList3.forEach(p->{
 			System.out.println(p);
 		});
