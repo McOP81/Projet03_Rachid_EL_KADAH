@@ -22,9 +22,9 @@ public class Projet03RachidElKadahApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		productRepository.save(new Product(null,"Computer",4300,3));
-		productRepository.save(new Product(null,"Printer",1200,4));
-		productRepository.save(new Product(null,"Smart phone",3200,32));
+//		productRepository.save(new Product(null,"Computer",4300,3));
+//		productRepository.save(new Product(null,"Printer",1200,4));
+//		productRepository.save(new Product(null,"Smart phone",3200,32));
 		List<Product> products = productRepository.findAll();
 		products.forEach(p->{
             System.out.println(p.toString());
@@ -35,8 +35,21 @@ public class Projet03RachidElKadahApplication implements CommandLineRunner {
 		System.out.println(product.getName());
 		System.out.println(product.getQuantity());
 		System.out.println("**********");
-
-
+		System.out.println("------------");
+		List<Product> productList = productRepository.findByNameContains("C");
+		productList.forEach(p->{
+			System.out.println(p);
+		});
+		System.out.println("##########");
+		List<Product> productList2 = productRepository.search("%C%");
+		productList2.forEach(p->{
+			System.out.println(p);
+		});
+		System.out.println("@@@@@@@@@@@");
+		List<Product> productList3 = productRepository.findByPriceGreaterThan(3000);
+		productList3.forEach(p->{
+			System.out.println(p);
+		});
 
 
 	}
